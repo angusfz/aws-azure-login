@@ -1,7 +1,4 @@
-[![view on npm](http://img.shields.io/npm/v/aws-azure-login.svg)](https://www.npmjs.org/package/aws-azure-login)
-[![npm module downloads per month](http://img.shields.io/npm/dm/aws-azure-login.svg)](https://www.npmjs.org/package/aws-azure-login)
-
-# aws-azure-login
+# aws-azure-login ( Fork from <https://github.com/dtjohnson/aws-azure-login>)
 If your organization uses [Azure Active Directory](https://azure.microsoft.com) to provide SSO login to the AWS console, then there is no easy way to log in on the command line or to use the [AWS CLI](https://aws.amazon.com/cli/). This tool fixes that. It lets you use the normal Azure AD login (including MFA) from a command line to create a federated AWS session and places the temporary credentials in the proper place for the AWS CLI and SDKs.
 
 ## Installation
@@ -44,13 +41,13 @@ Then install aws-azure-login:
 
 A Docker image has been built with aws-azure-login preinstalled. You simply need to run the command with a volume mounted to your AWS configuration directory.
 
-    docker run --rm -it -v ~/.aws:/root/.aws dtjohnson/aws-azure-login
+    docker run --rm -it -v ~/.aws:/root/.aws angusfz/aws-azure-login
     
 The Docker image is configured with an entrypoint so you can just feed any arguments in at the end.
 
 You can also put the docker-launch.sh script into your bin directory for the aws-azure-login command to function as usual:
 
-    sudo curl -o /usr/local/bin/aws-azure-login https://raw.githubusercontent.com/dtjohnson/aws-azure-login/master/docker-launch.sh
+    sudo curl -o /usr/local/bin/aws-azure-login https://raw.githubusercontent.com/angusfz/aws-azure-login/master/docker-launch.sh
     sudo chmod o+x /usr/local/bin/aws-azure-login
 
 Now just run `aws-azure-login`.
